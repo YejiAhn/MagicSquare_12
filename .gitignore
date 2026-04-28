@@ -1,0 +1,2 @@
+# Never commit GitHub personal access tokens saved as local files
+ghp_*.txt
