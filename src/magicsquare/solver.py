@@ -30,6 +30,22 @@ def _to_solution_vector(r1: int, c1: int, n1: int, r2: int, c2: int, n2: int) ->
     return [r1 + 1, c1 + 1, n1, r2 + 1, c2 + 1, n2]
 
 
+def _try_placement(
+    grid: list[list[int]],
+    r1: int,
+    c1: int,
+    r2: int,
+    c2: int,
+    n1: int,
+    n2: int,
+) -> list[int] | None:
+    """Try one value order; return contract vector if grid becomes magic."""
+    placed = _apply_pair(grid, r1, c1, n1, r2, c2, n2)
+    if not is_magic_square(placed):
+        return None
+    return _to_solution_vector(r1, c1, n1, r2, c2, n2)
+
+
 def solve(grid: list[list[int]]) -> list[int]:
     """
     Return [r1,c1,n1,r2,c2,n2] with 1-based coordinates (PRD §7.2).
@@ -43,12 +59,12 @@ def solve(grid: list[list[int]]) -> list[int]:
     (r1, c1), (r2, c2) = blanks[0], blanks[1]
     lo, hi = find_missing_pair(grid)
 
-    forward = _apply_pair(grid, r1, c1, lo, r2, c2, hi)
-    if is_magic_square(forward):
-        return _to_solution_vector(r1, c1, lo, r2, c2, hi)
+    forward_result = _try_placement(grid, r1, c1, r2, c2, lo, hi)
+    if forward_result is not None:
+        return forward_result
 
-    reverse = _apply_pair(grid, r1, c1, hi, r2, c2, lo)
-    if is_magic_square(reverse):
-        return _to_solution_vector(r1, c1, hi, r2, c2, lo)
+    reverse_result = _try_placement(grid, r1, c1, r2, c2, hi, lo)
+    if reverse_result is not None:
+        return reverse_result
 
     raise DomainError("DOMAIN_NO_VALID_PLACEMENT", "no valid placement for the two missing values")
