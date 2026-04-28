@@ -17,6 +17,4 @@ def find_missing_pair(grid: list[list[int]]) -> tuple[int, int]:
     if len(missing) != 2:
         raise ValueError("expected exactly two missing numbers for two blank cells")
     a, b = missing[0], missing[1]
-    if a > b:
-        a, b = b, a
-    return a, b
+    return tuple(sorted((a, b)))

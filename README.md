@@ -38,12 +38,9 @@
 
 ## 빌드 및 실행
 
-구현 코드와 빌드 도구(`package.json`, `pom.xml` 등)가 추가되면 이 섹션에 설치·테스트·실행 명령을 적습니다.
-
 ```bash
-# 예시 (도구 확정 후 수정)
-# npm test
-# mvn test
+pip install -e ".[dev,gui]"
+python -m magicsquare.gui
 ```
 
 ## 구현 To-Do (체크박스 · 단계별 번호 · Requirements 추적)
