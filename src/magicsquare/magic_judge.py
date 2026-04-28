@@ -5,6 +5,26 @@ from __future__ import annotations
 from magicsquare.constants import GRID_SIZE, MAGIC_SUM, MAX_CELL, MIN_CELL
 
 
+def _sum_row(grid: list[list[int]], row_index: int) -> int:
+    """Return sum of one row."""
+    return sum(grid[row_index][col_index] for col_index in range(GRID_SIZE))
+
+
+def _sum_col(grid: list[list[int]], col_index: int) -> int:
+    """Return sum of one column."""
+    return sum(grid[row_index][col_index] for row_index in range(GRID_SIZE))
+
+
+def _sum_main_diag(grid: list[list[int]]) -> int:
+    """Return sum of top-left to bottom-right diagonal."""
+    return sum(grid[index][index] for index in range(GRID_SIZE))
+
+
+def _sum_anti_diag(grid: list[list[int]]) -> int:
+    """Return sum of top-right to bottom-left diagonal."""
+    return sum(grid[index][GRID_SIZE - 1 - index] for index in range(GRID_SIZE))
+
+
 def is_magic_square(grid: list[list[int]]) -> bool:
     """
     True iff grid is 4x4, has no zeros, uses 1..16 exactly once,
@@ -29,14 +49,14 @@ def is_magic_square(grid: list[list[int]]) -> bool:
         return False
     if len(set(flat)) != GRID_SIZE * GRID_SIZE:
         return False
-    for r in range(GRID_SIZE):
-        if sum(grid[r][c] for c in range(GRID_SIZE)) != MAGIC_SUM:
+    for row_index in range(GRID_SIZE):
+        if _sum_row(grid, row_index) != MAGIC_SUM:
             return False
-    for c in range(GRID_SIZE):
-        if sum(grid[r][c] for r in range(GRID_SIZE)) != MAGIC_SUM:
+    for col_index in range(GRID_SIZE):
+        if _sum_col(grid, col_index) != MAGIC_SUM:
             return False
-    if sum(grid[i][i] for i in range(GRID_SIZE)) != MAGIC_SUM:
+    if _sum_main_diag(grid) != MAGIC_SUM:
         return False
-    if sum(grid[i][GRID_SIZE - 1 - i] for i in range(GRID_SIZE)) != MAGIC_SUM:
+    if _sum_anti_diag(grid) != MAGIC_SUM:
         return False
     return True
