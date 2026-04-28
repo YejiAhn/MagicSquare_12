@@ -8,6 +8,7 @@ dependencies = []
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0"]
+gui = ["PyQt6"]
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]
