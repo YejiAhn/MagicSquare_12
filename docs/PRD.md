@@ -3,6 +3,7 @@
 ## 1. 문서 역할
 
 - **`docs/PRD.md`**: 저장소 루트·`docs`에서 바로 열 수 있는 **제품 요구 요약본**이다.
+- **Report 보고서**: 동일 계열 요약은 [`Report/08_MagicSquare_PRD_Summary_Report.md`](../Report/08_MagicSquare_PRD_Summary_Report.md)에도 둔다.
 - **정본(상세)**: [`Report/05_MagicSquare_PRD.md`](../Report/05_MagicSquare_PRD.md) — 범위·계약·오류·비기능 요구의 전체 서술.
 
 ## 2. 제품 한 줄
@@ -44,4 +45,4 @@
 | [문제 정의](../Report/01_4x4_Magic_Square_Problem_Definition_Report.md) | 불변조건·문제 정의 |
 | [Dual-Track TDD](../Report/02_MagicSquare_4x4_DualTrack_TDD_Report.md) | RED 목록·UI/Logic 트랙 |
 | [사용자 여정](../Report/04_MagicSquare_User_Journey_Report.md) | Epic·스토리·Gherkin |
-| [구현 To-Do 정본](./TODO.md) · [Report 06](../Report/06_MagicSquare_4x4_Implementation_Todo_Report.md) | TASK 체계·시나리오·테스트 이름 |
+| [구현 To-Do 요약 (`docs`)](./TODO.md) · [Report 09](../Report/09_MagicSquare_Implementation_Todo_Summary_Report.md) · [Report 06 정본](../Report/06_MagicSquare_4x4_Implementation_Todo_Report.md) | TASK 체계·시나리오·테스트 이름 |

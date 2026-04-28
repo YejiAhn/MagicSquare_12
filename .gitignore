@@ -1,2 +1,11 @@
 # Never commit GitHub personal access tokens saved as local files
 ghp_*.txt
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/

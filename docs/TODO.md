@@ -3,6 +3,7 @@
 ## 문서 역할
 
 - **`docs/TODO.md`**: Epic·User Story·주요 Task를 **한 화면에서 체크**하기 위한 요약 보드이다.
+- **Report 보고서**: 동일 계열 요약은 [`Report/09_MagicSquare_Implementation_Todo_Summary_Report.md`](../Report/09_MagicSquare_Implementation_Todo_Summary_Report.md)에도 둔다.
 - **정본(전체 TASK·RED/GREEN/REFACTOR·체크포인트)**: [`Report/06_MagicSquare_4x4_Implementation_Todo_Report.md`](../Report/06_MagicSquare_4x4_Implementation_Todo_Report.md)
 
 ## 추적 한 줄
@@ -49,5 +50,5 @@
 
 ## PRD·문제 정의
 
-- [PRD (`docs`)](./PRD.md) · [PRD 정본](../Report/05_MagicSquare_PRD.md)
+- [PRD (`docs`)](./PRD.md) · [PRD 요약 (`Report`)](../Report/08_MagicSquare_PRD_Summary_Report.md) · [PRD 정본](../Report/05_MagicSquare_PRD.md)
 - [문제 정의](../Report/01_4x4_Magic_Square_Problem_Definition_Report.md)

@@ -1,8 +1,8 @@
 # Magic Square (4×4 마방진) — 테스트 케이스 명세서 (실행용 상세본)
 
 > **버전**: 2.0 · **작성일**: 2026-04-28  
-> **정본·동기화**: Report 정본은 [`Report/07_MagicSquare_4x4_TestCase_Specification_Form.md`](../Report/07_MagicSquare_4x4_TestCase_Specification_Form.md)이다. 본 `docs/` 파일은 동일 계열 편의 복제본으로 유지한다.  
-> **제품 근거**: [`docs/PRD.md`](./PRD.md) 요약 · [`Report/05_MagicSquare_PRD.md`](../Report/05_MagicSquare_PRD.md) 정본(입력/출력 계약·오류 코드).
+> **정본·동기화**: 본 파일이 Report 정본이다. 편의 복제본은 [`docs/MagicSquare_4x4_TestCase_Specification_Form.md`](../docs/MagicSquare_4x4_TestCase_Specification_Form.md)와 동일 계열로 유지한다.  
+> **제품 근거**: [`docs/PRD.md`](../docs/PRD.md) 요약 · [`Report/05_MagicSquare_PRD.md`](./05_MagicSquare_PRD.md) 정본(입력/출력 계약·오류 코드).
 
 ---
 
@@ -63,7 +63,7 @@
 | 마방진 합 | **34**(행 4개·열 4개·주대각·부대각 각각) |
 | 빈칸 좌표 순서 | **row-major**(행 오름차순, 같은 행이면 열 오름차순) |
 | 유스케이스 성공 출력 | **`int[6]`**: `[r1,c1,n1,r2,c2,n2]` — 좌표는 **1-인덱스**(1~4), `n1`·`n2`는 채워 넣을 값 |
-| 배치 시도 순서 | **(작은 수 → row-major 첫 빈칸, 큰 수 → 둘째 빈칸)** 조합을 먼저 시도하고, 마방진이 되면 채택. 되지 않으면 **역순** 조합 시도([PRD §7.2](../Report/05_MagicSquare_PRD.md)). |
+| 배치 시도 순서 | **(작은 수 → row-major 첫 빈칸, 큰 수 → 둘째 빈칸)** 조합을 먼저 시도하고, 마방진이 되면 채택. 되지 않으면 **역순** 조합 시도([PRD §7.2](./05_MagicSquare_PRD.md)). |
 
 **주의**: 아래 TC 중 **A-003~A-005**, **C-003** 등은 PRD상 **입력 무효**인 보드(빈칸 0·1·3+개)를 다룬다. 제품 `Control` 입구에서는 **검증 단계에서 거부**되므로, 해당 TC는 **`BoardValidator` 이후에 호출되는 `find_blank_coords` 단독 단위** 또는 **테스트 더블**로 수행한다는 전제를 명시한다.
 
@@ -793,4 +793,4 @@ D006_JAGGED = [[1, 2, 3, 4], [5, 6], [7, 8, 9, 10], [11, 12, 13, 14]]
 | TC-MS-D-001 ~ D-006 | 오류·예외 | 범위·중복·형태·null·타입·비직사각 |
 | TC-MS-D-007 ~ D-008 | 권장 | 빈칸 개수·배치 불가 |
 
-구현 To-Do·시나리오 매핑은 [`Report/06_MagicSquare_4x4_Implementation_Todo_Report.md`](../Report/06_MagicSquare_4x4_Implementation_Todo_Report.md)의 Task·테스트 이름과 본 TC ID를 1:1 또는 N:1로 연결한다.
+구현 To-Do·시나리오 매핑은 [`06_MagicSquare_4x4_Implementation_Todo_Report.md`](./06_MagicSquare_4x4_Implementation_Todo_Report.md)의 Task·테스트 이름과 본 TC ID를 1:1 또는 N:1로 연결한다.

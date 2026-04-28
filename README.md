@@ -32,6 +32,9 @@
 | [04 — 사용자 여정](Report/04_MagicSquare_User_Journey_Report.md) | Epic·여정·User Story·Gherkin |
 | [05 — PRD](Report/05_MagicSquare_PRD.md) | 제품 요구사항·범위·계약 |
 | [**06 — 구현용 To-Do**](Report/06_MagicSquare_4x4_Implementation_Todo_Report.md) | **TASK-000~045 전체**(Scenario·Test·Code·ECB) |
+| [07 — 테스트 케이스 명세](Report/07_MagicSquare_4x4_TestCase_Specification_Form.md) | TC-MS-A~D 양식 반영·Given/When/Then·성공·실패 기준 |
+| [08 — PRD 요약](Report/08_MagicSquare_PRD_Summary_Report.md) | 제품 요구 한 화면 요약(정본은 05) |
+| [09 — 구현 To-Do 요약](Report/09_MagicSquare_Implementation_Todo_Summary_Report.md) | Epic/US/Task 체크 보드(정본은 06) |
 
 ## 빌드 및 실행
 
