@@ -12,14 +12,14 @@ python -m pytest --cov=src/magicsquare --cov-report=term-missing --cov-report=ht
 
 ## 2) 테스트 결과
 
-- 수집 테스트: 37
-- 통과: 37
+- 수집 테스트: 52
+- 통과: 52
 - 실패: 0
 - 결과: PASS
 
 ## 3) 커버리지 요약
 
-- TOTAL: **62%** (`229 statements`, `88 missed`)
+- TOTAL: **100%** (`227 statements`, `0 missed`)
 - HTML 리포트 출력: `htmlcov/index.html`
 - Live 확인 URL(로컬 서버): `http://localhost:5500`
 
@@ -29,20 +29,20 @@ python -m pytest --cov=src/magicsquare --cov-report=term-missing --cov-report=ht
 |---|---:|---:|---:|
 | `src/magicsquare/__init__.py` | 5 | 0 | 100% |
 | `src/magicsquare/blank_coords.py` | 8 | 0 | 100% |
-| `src/magicsquare/boundary.py` | 15 | 6 | 60% |
+| `src/magicsquare/boundary.py` | 15 | 0 | 100% |
 | `src/magicsquare/constants.py` | 5 | 0 | 100% |
 | `src/magicsquare/domain.py` | 6 | 0 | 100% |
 | `src/magicsquare/errors.py` | 10 | 0 | 100% |
 | `src/magicsquare/gui/__init__.py` | 0 | 0 | 100% |
-| `src/magicsquare/gui/__main__.py` | 4 | 4 | 0% |
-| `src/magicsquare/gui/app.py` | 67 | 67 | 0% |
-| `src/magicsquare/magic_judge.py` | 33 | 7 | 79% |
-| `src/magicsquare/missing_numbers.py` | 16 | 2 | 88% |
+| `src/magicsquare/gui/__main__.py` | 4 | 0 | 100% |
+| `src/magicsquare/gui/app.py` | 67 | 0 | 100% |
+| `src/magicsquare/magic_judge.py` | 33 | 0 | 100% |
+| `src/magicsquare/missing_numbers.py` | 14 | 0 | 100% |
 | `src/magicsquare/solver.py` | 26 | 0 | 100% |
-| `src/magicsquare/validator.py` | 34 | 2 | 94% |
+| `src/magicsquare/validator.py` | 34 | 0 | 100% |
 
 ## 5) 관찰 및 다음 액션
 
-- GUI Screen 레이어(`gui/app.py`)는 자동화 테스트가 없어 현재 0%입니다.
-- `boundary.py`는 실패 경로(예외 매핑) 중심 테스트를 추가하면 빠르게 상승 가능합니다.
-- 다음 목표 예시: `TOTAL 70%` 이상 (`--cov-fail-under=70` 도입 검토).
+- GUI Screen 레이어(`gui/app.py`)와 진입점(`gui/__main__.py`)에 대한 분기 테스트를 추가해 UI 코드도 커버리지에 포함했습니다.
+- Boundary/Validator의 예외 경로(TypeError/ValidationError 래핑) 테스트를 보강해 계약 경로를 모두 검증했습니다.
+- 커버리지 유지 가드 예시: `--cov-fail-under=100`를 CI 또는 로컬 스크립트에 도입.
